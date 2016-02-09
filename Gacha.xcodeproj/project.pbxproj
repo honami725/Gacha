@@ -14,6 +14,8 @@
 		226FFD5F1C6A40D7002A04EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226FFD5D1C6A40D7002A04EA /* LaunchScreen.storyboard */; };
 		226FFD6A1C6A40D8002A04EA /* GachaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226FFD691C6A40D8002A04EA /* GachaTests.swift */; };
 		226FFD751C6A40D8002A04EA /* GachaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226FFD741C6A40D8002A04EA /* GachaUITests.swift */; };
+		226FFD851C6A4837002A04EA /* GachaResources in Resources */ = {isa = PBXBuildFile; fileRef = 226FFD841C6A4837002A04EA /* GachaResources */; };
+		226FFD871C6A4915002A04EA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226FFD861C6A4915002A04EA /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		226FFD701C6A40D8002A04EA /* GachaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GachaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		226FFD741C6A40D8002A04EA /* GachaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachaUITests.swift; sourceTree = "<group>"; };
 		226FFD761C6A40D8002A04EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226FFD841C6A4837002A04EA /* GachaResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GachaResources; sourceTree = "<group>"; };
+		226FFD861C6A4915002A04EA /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		226FFD481C6A40D7002A04EA = {
 			isa = PBXGroup;
 			children = (
+				226FFD841C6A4837002A04EA /* GachaResources */,
 				226FFD531C6A40D7002A04EA /* Gacha */,
 				226FFD681C6A40D8002A04EA /* GachaTests */,
 				226FFD731C6A40D8002A04EA /* GachaUITests */,
@@ -100,6 +105,7 @@
 				226FFD541C6A40D7002A04EA /* AppDelegate.swift */,
 				226FFD561C6A40D7002A04EA /* ViewController.swift */,
 				226FFD581C6A40D7002A04EA /* Main.storyboard */,
+				226FFD861C6A4915002A04EA /* ResultViewController.swift */,
 				226FFD5B1C6A40D7002A04EA /* Assets.xcassets */,
 				226FFD5D1C6A40D7002A04EA /* LaunchScreen.storyboard */,
 				226FFD601C6A40D7002A04EA /* Info.plist */,
@@ -233,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				226FFD5F1C6A40D7002A04EA /* LaunchScreen.storyboard in Resources */,
+				226FFD851C6A4837002A04EA /* GachaResources in Resources */,
 				226FFD5C1C6A40D7002A04EA /* Assets.xcassets in Resources */,
 				226FFD5A1C6A40D7002A04EA /* Main.storyboard in Resources */,
 			);
@@ -261,6 +268,7 @@
 			files = (
 				226FFD571C6A40D7002A04EA /* ViewController.swift in Sources */,
 				226FFD551C6A40D7002A04EA /* AppDelegate.swift in Sources */,
+				226FFD871C6A4915002A04EA /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
