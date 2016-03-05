@@ -10,18 +10,24 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    @IBOutlet var haikeiImageView : UIImageView!
-    @IBOutlet var monsterImageView : UIImageView!
-    var monsterArray : [UIImage]!
+    //背景
+    @IBOutlet var haikeiImageView:UIImageView!
+    
+    //モンスター
+    @IBOutlet var monsterImageView:UIImageView!
+    
+    //モンスター画像を保存
+    var monsterArray:[UIImage]!
+    var monsterName:[String] = ["ねこ","さかな","むかで", "だてんし", "ナイト", "どらごん", "まほうつかい","ゴルドラ", "魔導師","アテナ"]
+    
+    @IBOutlet var label:UILabel!
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        let number = Int(rand() % 9)
+        //乱数
+        let number = Int(arc4random() % 10)
         
         monsterArray = [UIImage(named: "monster001.png")!,
             UIImage(named: "monster002.png")!,
@@ -31,40 +37,75 @@ class ResultViewController: UIViewController {
             UIImage(named: "monster006.png")!,
             UIImage(named: "monster007.png")!,
             UIImage(named: "monster008.png")!,
-            UIImage(named: "monster009.png")!
+            UIImage(named: "monster009.png")!,
+            UIImage(named: "monster010.png")!,
+            
+            
         ]
         
+        //セット
         monsterImageView.image = monsterArray[number]
         
-        if number == 9 {
+        //numberによって切り替え
+        if number == 9{
             haikeiImageView.image = UIImage(named: "bg_gold.png")
-        } else if number > 6 {
+        }else if number > 6{
             haikeiImageView.image = UIImage(named: "bg_red.png")
-        } else {
-            haikeiImageView.image = UIImage(named: "bg_blue.png")
+        }else{
+            haikeiImageView.image = UIImage(named: "bg_blu e.png")
+            
         }
         
+        
+        
+        // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        let animation = CABasicAnimation(keyPath: "transform")
-        animation.fromValue = NSNumber(double: 0)
-        animation.toValue = NSNumber(double: 2 * M_PI)
-        animation.valueFunction = CAValueFunction(name: kCAValueFunctionRotateZ)
-        animation.duration = 5
-        animation.repeatCount = Float.infinity
-        haikeiImageView.layer.addAnimation(animation, forKey: nil)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        //変形を指定
+        let animation = CABasicAnimation(keyPath: "transform")
+        let manimation = CABasicAnimation(keyPath: "transform")
+        
+        //開始時
+        animation.fromValue = NSNumber(double: 0)
+        manimation.fromValue = NSNumber(double: 0)
+        
+        //終了時
+        animation.toValue = NSNumber(double: 2*M_PI)
+        manimation.toValue = NSNumber(double: -2*M_PI)
+        
+        
+        
+        //z軸を中心とした回転
+        animation.valueFunction = CAValueFunction(name: kCAValueFunctionRotateZ)
+        manimation.valueFunction = CAValueFunction(name: kCAValueFunctionRotateZ)
+        
+        //スピード
+        animation.duration = 5
+        manimation.duration = 1
+        
+        //無限に繰り返す
+        animation.repeatCount = Float.infinity
+        manimation.repeatCount = 2
+        
+        //背景をアニメーションさせる
+        monsterImageView.layer.addAnimation(manimation, forKey: nil)
+        haikeiImageView.layer.addAnimation(animation, forKey: nil)
+    }
+    
     @IBAction func modoru(){
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     
 
     /*
